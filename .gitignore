@@ -27,3 +27,9 @@ dist/
 # Arquivos do sistema
 Thumbs.db
 .DS_Store
+# Arquivos específicos do projeto
+info.txt
+EBO_Device_Simulator.spec
+DH.xml
+CAQ.xml
+DDC 52 53 54 E 56 BKP EM INGLES.xml
