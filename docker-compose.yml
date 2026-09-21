@@ -1,0 +1,55 @@
+services:
+  dsb-ups-4-1-2:
+    build: .
+    container_name: dsb-ups-4-1-2
+    ports:
+      - "10.67.116.77:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app
+  dsb-ups-4-1-1:
+    build: .
+    container_name: dsb-ups-4-1-1
+    ports:
+      - "10.67.116.76:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app
+  dsb-tr-aux-4-1:
+    build: .
+    container_name: dsb-tr-aux-4-1
+    ports:
+      - "10.67.116.26:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app
+  msb-4-1:
+    build: .
+    container_name: msb-4-1
+    ports:
+      - "10.67.116.206:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app
+  pg-db-4-1:
+    build: .
+    container_name: pg-db-4-1
+    ports:
+      - "10.67.118.125:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app
+  dsb-mech-4-1:
+    build: .
+    container_name: dsb-mech-4-1
+    ports:
+      - "10.8.132.112:502:502"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/app

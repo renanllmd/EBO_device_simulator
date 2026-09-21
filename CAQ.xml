@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectSet ExportMode="Special" Note="TypesFirst" SemanticsFilter="Special" Version="6.0.4.90">
+  <MetaInformation>
+    <ExportMode Value="Special"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="6.0.4.90"/>
+    <SourceVersion Value="6.0.4.90"/>
+    <ServerFullPath Value="/Server 1"/>
+  </MetaInformation>
+  <Types>
+    <ObjectType Name            = "udt.2c6jkjwt4nrurg5j7niscuauge.3d6kxa4vmvvbl5igm5vk75vc6tnxnbyu"
+                DisplayName     = ""
+                Description     = ""
+                Base            = "script.Program"
+                Icon            = ""
+                Abstract        = "0"
+                Implements      = ""
+                DefaultProperty = ""
+                Version         = "1"
+                >
+      <PropertyTab Name = "BASIC">
+        <PropertyGroup Name = "STATUS">
+          <Parameter Name                  = "Complete"
+                     DisplayName           = "Compilation valid"
+                     Description           = "Tells if the program is complete and that it can be run by the server"
+                     Visibility            = "Summary"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.Boolean"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="1"/>
+          </Parameter>
+          <Parameter Name                  = "CompilerVersion"
+                     DisplayName           = "Compiler version"
+                     Description           = "Compiler version"
+                     Visibility            = "Normal"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="1"/>
+          </Parameter>
+        </PropertyGroup>
+        <PropertyGroup Name = "CONFIGURATION">
+          <Parameter Name                  = "File"
+                     DisplayName           = "File"
+                     Description           = "Script Program file"
+                     Visibility            = "Hidden"
+                     Optional              = "0"
+                     ReadOnly              = "1"
+                     Static                = "1"
+                     RTWriteable           = "0"
+                     Unique                = "No"
+                     Copy                  = "0"
+                     Nullable              = "0"
+                     >
+              <Type Configurable = "No" Value = "system.pt.String"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitValue Value="&lt;PEObject CompilationSuccess=&quot;true&quot; DateChanged=&quot;2461183.3300997107&quot; LineNumberDeclarationsEnd=&quot;27&quot; LineProgramEntry=&quot;0&quot; ProgramEntry=&quot;189&quot; ScriptCompilerVersion=&quot;1&quot; ScriptObjectType=&quot;1&quot; Version=&quot;1&quot;&gt;&#xA; &lt;Code CodeEncrypted=&quot;false&quot; Version=&quot;1&quot;&gt;J0VudHJhZGFzIC0gVEVMQSAtIEzzZ2ljYSBDQVENCk51bWVyaWMgSW5wdXQgSGFiX2NhcSwg&#xD;&#xA;U1BfdGVtcCwgVGVtcF9leHQsIERlbGF5X3JldGVzdGUsIEhhYl9jYXFfc2VtX2xvZ2ljYQ0K&#xD;&#xA;DQonRW50cmFkYXMgLSBCb21iYQ0KJ1ByaW3hcmlhcw0KTnVtZXJpYyBJbnB1dCBDaHNlbF9i&#xD;&#xA;cDFfdGVsYSwgQ2hzZWxfYnAxX2Zpc2ljYSwgQ2hzZWxfYnAyX3RlbGEsIENoc2VsX2JwMl9m&#xD;&#xA;aXNpY2ENCidTZWN1bmThcmlhcw0KTnVtZXJpYyBJbnB1dCBDaHNlbF9iczFfdGVsYSwgQ2hz&#xD;&#xA;ZWxfYnMxX2Zpc2ljYSwgQ2hzZWxfYnMyX3RlbGEsIENoc2VsX2JzMl9maXNpY2ENCidTdGF0&#xD;&#xA;dXMgQm9tYmFzIA0KTnVtZXJpYyBJbnB1dCBTdGF0dXNfQlAxLCBTdGF0dXNfQlAyLCBTdGF0&#xD;&#xA;dXNfQlMxLCBTdGF0dXNfQlMyLCBTdGF0dXNfQm9pbGVyDQoNCidTYe1kYXMNCk51bWVyaWMg&#xD;&#xA;T3V0cHV0IE1vZG9fSW52ZXJubywgQ01EX0JQMSwgQ01EX0JQMiwgQ01EX0JvaWxlciwgQ01E&#xD;&#xA;X0JTMSwgQ01EX0JTMg0KDQonQWxhcm1lcw0KTnVtZXJpYyBPdXRwdXQgQUxNX0RFU19CUDEs&#xD;&#xA;IEFMTV9ERVNfQlAyLCBBTE1fQlBfSW5kaXNwLCBBTE1fQlBfZmFsaGFfcGFydGlkYQ0KTnVt&#xD;&#xA;ZXJpYyBPdXRwdXQgQUxNX0RFU19CUzEsIEFMTV9ERVNfQlMyLEFMTV9CU19JbmRpc3AsIEFM&#xD;&#xA;TV9CU19mYWxoYV9wYXJ0aWRhDQpOdW1lcmljIE91dHB1dCBBTE1fZmFsaGFfY21kX2JvaWxl&#xD;&#xA;ciANCg0KJ1ZhcmnhdmVsIGRlIGFwb2lvIG5hIGzzZ2ljYQ0KTnVtZXJpYyBUaW1lciwgVHJh&#xD;&#xA;dmFfbG9naWNhLCBQYXJ0aXJfQjEsIFBhcnRpcl9CUywgUGFydGlyX0JvaWxlciwgVHJhdmFf&#xD;&#xA;dGltZXJfQlMsIFRpbWVyX2Rlc2xpZ2FtZW50bywgVGltZXJfZGVzbGlnYW1lbnRvMiwgVHJh&#xD;&#xA;dmFfdGltZXJfQlANCk51bWVyaWMgVGltZXJCMSwgVGltZXJCMiwgVGltZXJCUzEsIFRpbWVy&#xD;&#xA;QlMyLCBUaW1lcl9Cb2lsZXINCg0KTnVtZXJpYyBJbnB1dAlUaW1lcjMwLCBUaW1lcjYwDQoN&#xD;&#xA;CidM82dpY2EgcGFyYSBoYWJpbGl0YXIgbW9kbyBpbnZlcm5vIGNvbSBs82dpY2ENCklmIEhB&#xD;&#xA;Ql9DQVEgaXMgdHJ1ZSBhbmQgKERlbGF5X3JldGVzdGUgPD4gMCkgYW5kIFRyYXZhX2xvZ2lj&#xD;&#xA;YSBpcyBmYWxzZSBUaGVuDQoJSWYgVGVtcF9leHQgPCBTUF90ZW1wIFRoZW4NCgkJTW9kb19J&#xD;&#xA;bnZlcm5vID0gMQ0KCQlQYXJ0aXJfQjEgPSAxDQoJCVRpbWVyID0gVGltZXIgKyAxDQoJCVRp&#xD;&#xA;bWVyX2Rlc2xpZ2FtZW50bzIgPSAwDQoJRW5kaWYNCkVuZGlmDQoNCidM82dpY2EgZGUgZGVz&#xD;&#xA;bGlnYW1lbnRvDQpJZiB0aW1lciA+IERlbGF5X3JldGVzdGUgVGhlbg0KCUlmIFRlbXBfZXh0&#xD;&#xA;ID49IFNQX3RlbXAgVGhlbg0KCQlNb2RvX0ludmVybm8gPSAwDQoJCVBhcnRpcl9Cb2lsZXIg&#xD;&#xA;PSAwDQoJCVRpbWVyQjEgPSAwDQoJCVRpbWVyQjIgPSAwDQoJCVRpbWVyX0JvaWxlciA9IDAN&#xD;&#xA;CgkJVGltZXJCUzEgPSAwDQoJCVRpbWVyQlMyID0gMA0KCQlUaW1lcl9kZXNsaWdhbWVudG8g&#xD;&#xA;PSBUaW1lcl9kZXNsaWdhbWVudG8gKyAxDQoJRW5kaWYNCg0KCQlJZiBUaW1lcl9kZXNsaWdh&#xD;&#xA;bWVudG8gPSBUaW1lcjYwIFRoZW4NCgkJCVBhcnRpcl9CUyA9IDANCgkJCVRpbWVyX2Rlc2xp&#xD;&#xA;Z2FtZW50bzIgPSBUaW1lcl9kZXNsaWdhbWVudG8yICsgMQ0KCQlFbmRpZg0KCQkNCgkJCUlm&#xD;&#xA;IFRpbWVyX2Rlc2xpZ2FtZW50bzIgPSBUaW1lcjMwIFRoZW4NCgkJCQlQYXJ0aXJfQjEgPSAw&#xD;&#xA;DQoJCQkJVGltZXJfZGVzbGlnYW1lbnRvID0gMA0KCQkJRW5kaWYNCkVuZGlmDQoNCklmIHRp&#xD;&#xA;bWVyID4gRGVsYXlfcmV0ZXN0ZSBUaGVuDQoJSWYgVGVtcF9leHQgPCBTUF90ZW1wIFRoZW4N&#xD;&#xA;CgkJVGltZXIgPSAwDQoJCVRyYXZhX2xvZ2ljYSA9IDANCglFbmRpZg0KRW5kaWYNCg0KJ01v&#xD;&#xA;ZG8gaW52ZXJubyBoYWJpbGl0YWRvIHNlbSBs82dpY2ENCklmIEhhYl9jYXEgaXMgZmFsc2Ug&#xD;&#xA;YW5kIEhhYl9jYXFfc2VtX2xvZ2ljYSBpcyB0cnVlIFRoZW4NCglNb2RvX0ludmVybm8gPSAx&#xD;&#xA;DQpFbHNlDQoJTW9kb19JbnZlcm5vID0gMA0KRW5kaWYNCg0KJ0zzZ2ljYSBkYXMgYm9tYmFz&#xD;&#xA;DQonQlAgRGVzbGlnYWRhDQpJZiBQYXJ0aXJfQjEgaXMgZmFsc2UgVGhlbg0KCUNNRF9CUDEg&#xD;&#xA;YW5kIENNRF9CUDIgPSAwDQpFbmRpZg0KDQonQjEgTGlnYWRhDQpJZiBQYXJ0aXJfQjEgaXMg&#xD;&#xA;dHJ1ZSBUaGVuDQoJSWYgQ2hzZWxfYnAxX3RlbGEgaXMgdHJ1ZSBhbmQgQ2hzZWxfYnAxX2Zp&#xD;&#xA;c2ljYSBpcyBGYWxzZSBUaGVuDQoJCUFMTV9ERVNfQlAxID0gMQ0KCUVsc2UNCgkJQUxNX0RF&#xD;&#xA;U19CUDEgPSAwDQoJRW5kaWYNCgkNCglJZiAoQ2hzZWxfYnAxX3RlbGEgQW5kIENoc2VsX2Jw&#xD;&#xA;MV9maXNpY2EpIGlzIHRydWUgYW5kICggQUxNX0JQX2ZhbGhhX3BhcnRpZGEgYW5kIFRyYXZh&#xD;&#xA;X1RpbWVyX0JQKSBpcyBmYWxzZSBUaGVuDQoJCUNNRF9CUDEgPSAxDQoJCVRpbWVyQjEgPSBU&#xD;&#xA;aW1lckIxICsgMQ0KCQlBTE1fQlBfSW5kaXNwID0gMA0KCUVsc2UNCgkJQ01EX0JQMSA9IDAN&#xD;&#xA;CgkJQUxNX0JQX0luZGlzcCA9IDENCglFbmRpZg0KRW5kaWYNCg0KJ0JQMg0KSWYgUGFydGly&#xD;&#xA;X0IxIGlzIHRydWUgVGhlbg0KCUlmIChDaHNlbF9icDJfdGVsYSBpcyB0cnVlIGFuZCBDaHNl&#xD;&#xA;bF9icDJfZmlzaWNhKSBpcyBGYWxzZSBUaGVuDQoJCUFMTV9ERVNfQlAyID0gMQ0KCUVsc2UN&#xD;&#xA;CgkJQUxNX0RFU19CUDIgPSAwDQoJRW5kaWYNCgkNCglJZiAoQ2hzZWxfYnAyX3RlbGEgQW5k&#xD;&#xA;IENoc2VsX2JwMl9maXNpY2EpIGlzIHRydWUgYW5kICggQUxNX0JQX2ZhbGhhX3BhcnRpZGEg&#xD;&#xA;YW5kIFRyYXZhX1RpbWVyX0JQKSBpcyBmYWxzZSBUaGVuDQoJCUNNRF9CUDIgPSAxDQoJCVRp&#xD;&#xA;bWVyQjIgPSBUaW1lckIyICsgMQ0KCQlBTE1fQlBfSW5kaXNwID0gMA0KCUVsc2UNCgkJQ01E&#xD;&#xA;X0JQMiA9IDANCgkJQUxNX0JQX0luZGlzcCA9IDENCglFbmRpZg0KRW5kaWYNCgkNCidWZXJp&#xD;&#xA;ZmljYW5kbyBzZSBib21iYXMgcHJpbeFyaWFzIGxpZ2FyYW0NCklmIChUaW1lckIxIG9yIFRp&#xD;&#xA;bWVyQjIpID0gVGltZXIzMCBhbmQgUGFydGlyX0IxIGlzIHRydWUgVGhlbg0KCUlmIChTdGF0&#xD;&#xA;dXNfQlAxIG9yIFN0YXR1c19CUDIpIGlzIHRydWUgVGhlbg0KCQlQYXJ0aXJfQlMgPSAxDQoJ&#xD;&#xA;CUFMTV9CUF9mYWxoYV9wYXJ0aWRhID0gMA0KCQlUcmF2YV9UaW1lcl9CUCA9IDENCglFbHNl&#xD;&#xA;DQoJCVBhcnRpcl9CUyA9IDANCgkJQUxNX0JQX2ZhbGhhX3BhcnRpZGEgPSAxDQoJCVRyYXZh&#xD;&#xA;X1RpbWVyX0JQID0gMA0KCUVuZGlmDQpFbmRpZg0KDQonQm9tYmFzIHNlY3VuZOFyaWFzIEJT&#xD;&#xA;DQonQlMgRGVzbGlnYWRhDQpJZiBQYXJ0aXJfQlMgaXMgZmFsc2UgVGhlbg0KCUNNRF9CUzEg&#xD;&#xA;YW5kIENNRF9CUzIgPSAwDQpFbmRpZg0KDQonQlMxIExpZ2FkYQ0KSWYgUGFydGlyX0JTIGlz&#xD;&#xA;IFRydWUgVGhlbg0KCUlmIChDaHNlbF9iczFfdGVsYSBpcyB0cnVlIGFuZCBDaHNlbF9iczFf&#xD;&#xA;ZmlzaWNhKSBpcyBGYWxzZSBUaGVuDQoJCUFMTV9ERVNfQlMxID0gMQ0KCUVsc2UNCgkJQUxN&#xD;&#xA;X0RFU19CUzEgPSAwDQoJRW5kaWYNCgkNCglJZiAoQ2hzZWxfYnMxX3RlbGEgQW5kIENoc2Vs&#xD;&#xA;X2JzMV9maXNpY2EpIGlzIHRydWUgYW5kIChBTE1fQlNfZmFsaGFfcGFydGlkYSBhbmQgVHJh&#xD;&#xA;dmFfVGltZXJfQlMpIGlzIGZhbHNlIFRoZW4NCgkJQ01EX0JTMSA9IDENCgkJVGltZXJCUzEg&#xD;&#xA;PSBUaW1lckJTMSArIDENCgkJQUxNX0JTX0luZGlzcCA9IDANCglFbHNlDQoJCUNNRF9CUzEg&#xD;&#xA;PSAwDQoJCUFMTV9CU19JbmRpc3AgPSAxDQoJRW5kaWYNCkVuZGlmDQoNCidCUzINCklmIFBh&#xD;&#xA;cnRpcl9CUyBpcyB0cnVlIFRoZW4NCglJZiAoQ2hzZWxfYnMyX3RlbGEgaXMgdHJ1ZSBhbmQg&#xD;&#xA;Q2hzZWxfYnMyX2Zpc2ljYSkgaXMgRmFsc2UgVGhlbg0KCQlBTE1fREVTX0JTMiA9IDENCglF&#xD;&#xA;bHNlDQoJCUFMTV9ERVNfQlMyID0gMA0KCUVuZGlmDQoJDQoJSWYgKENoc2VsX2JzMl90ZWxh&#xD;&#xA;IEFuZCBDaHNlbF9iczJfZmlzaWNhKSBpcyB0cnVlIGFuZCAoQUxNX0JTX2ZhbGhhX3BhcnRp&#xD;&#xA;ZGEgYW5kIFRyYXZhX1RpbWVyX0JTKSBpcyBmYWxzZSBUaGVuDQoJCUNNRF9CUzIgPSAxDQoJ&#xD;&#xA;CVRpbWVyQlMyID0gVGltZXJCUzIgKyAxDQoJCUFMTV9CU19JbmRpc3AgPSAwDQoJRWxzZQ0K&#xD;&#xA;CQlDTURfQlMyID0gMA0KCQlBTE1fQlNfSW5kaXNwID0gMQ0KCUVuZGlmDQpFbmRpZg0KDQon&#xD;&#xA;VmVyaWZpY2FuZG8gc2UgYm9tYmFzIHNlY3VuZOFyaWFzIGxpZ2FyYW0NCklmIChUaW1lckJT&#xD;&#xA;MSBvciBUaW1lckJTMikgPSBUaW1lcjMwIGFuZCBQYXJ0aXJfQlMgaXMgVHJ1ZSBUaGVuDQoJ&#xD;&#xA;SWYgKFN0YXR1c19CUzEgb3IgU3RhdHVzX0JTMikgaXMgdHJ1ZSBUaGVuDQoJCVBhcnRpcl9C&#xD;&#xA;b2lsZXIgPSAxDQoJCUFMTV9CU19mYWxoYV9wYXJ0aWRhID0gMA0KCQlUcmF2YV9UaW1lcl9C&#xD;&#xA;UyA9IDENCglFbHNlDQoJCVRyYXZhX1RpbWVyX0JTID0gMA0KCQlQYXJ0aXJfQm9pbGVyID0g&#xD;&#xA;MA0KCQlBTE1fQlNfZmFsaGFfcGFydGlkYSA9IDENCglFbmRpZg0KRW5kaWYNCg0KJ0JvaWxl&#xD;&#xA;cg0KJ0JvaWxlciBEZXNsaWdhZG8NCklmIFBhcnRpcl9Cb2lsZXIgaXMgZmFsc2UgVGhlbg0K&#xD;&#xA;CUNNRF9Cb2lsZXIgPSAwDQpFbmRpZg0KDQonQm9pbGVyIExpZ2Fkbw0KSWYgUGFydGlyX0Jv&#xD;&#xA;aWxlciBpcyB0cnVlIFRoZW4NCgkJQ01EX0JvaWxlciA9IDENCgkJVGltZXJfQm9pbGVyID0g&#xD;&#xA;VGltZXJfQm9pbGVyICsgMQ0KCUVsc2UNCgkJQ01EX0JvaWxlciA9IDANCgkJVGltZXJfQm9p&#xD;&#xA;bGVyID0gMA0KRW5kaWYNCg0KSWYgVGltZXJfQm9pbGVyID49IFRpbWVyMzAgYW5kIFBhcnRp&#xD;&#xA;cl9Cb2lsZXIgaXMgVHJ1ZSBUaGVuDQoJSWYgU3RhdHVzX0JvaWxlciBpcyBUcnVlIFRoZW4N&#xD;&#xA;CgkJQUxNX2ZhbGhhX2NtZF9ib2lsZXIgPSAwDQoJRWxzZQ0KCQlBTE1fZmFsaGFfY21kX2Jv&#xD;&#xA;aWxlciA9IDENCglFbmRpZg0KRW5kaWY=&lt;/Code&gt;&#xA; &lt;ByteCode Version=&quot;1&quot;&gt;PjsgP6APP6EPP6IPP6MPP6QP0j47ID+lDz+mDz+nDz+oD9I+OyA/qQ8/qg8/qw8/rA/SPjsg&#xD;&#xA;P60PP64PP68PP7APP7EP0j47IT+yDz+zDz+0Dz+1Dz+2Dz+3D9I+OyE/uA8/uQ8/ug8/uw/S&#xD;&#xA;PjshP7wPP70PP74PP78P0j47IT/AD9I+Oz8AAD8BAD8CAD8DAD8EAD8FAD8GAD8HAD8IANI+&#xD;&#xA;Oz8JAD8KAD8LAD8MAD8NANI+OyA/wQ8/wg/Svj4AAAB/f3M/oA9EBQEAdHJ1ZQBQZj+jD0IA&#xD;&#xA;AAAAcz8BAEQFAABmYWxzZQDSvi8AAABpP6IPP6EP0qdCAACAPz+yD9KnQgAAgD8/AgDSp1Q/&#xD;&#xA;AABCAACAPz8AANKnQgAAAAA/BwDSwdLB0r6wAAAAbj8AAD+jD9K+VwAAAHE/og8/oQ/Sp0IA&#xD;&#xA;AAAAP7IP0qdCAAAAAD8EANKnQgAAAAA/CQDSp0IAAAAAPwoA0qdCAAAAAD8NANKnQgAAAAA/&#xD;&#xA;CwDSp0IAAAAAPwwA0qdUPwYAQgAAgD8/BgDSwdK+GwAAAGQ/BgA/wg/Sp0IAAAAAPwMA0qdU&#xD;&#xA;PwcAQgAAgD8/BwDSwdK+FwAAAGQ/BwA/wQ/Sp0IAAAAAPwIA0qdCAAAAAD8GANLB0sHSviYA&#xD;&#xA;AABuPwAAP6MP0r4XAAAAaT+iDz+hD9KnQgAAAAA/AADSp0IAAAAAPwEA0sHSwdK+EQAAAH9z&#xD;&#xA;P6APRAUAAGZhbHNlAHM/pA9EBQEAdHJ1ZQDSp0IAAIA/P7IP0sANAAAA0qdCAAAAAD+yD9LB&#xD;&#xA;0r4QAAAAcz8CAEQFAABmYWxzZQDSp0IAAAAAP7MPP7QP0sHSvqsAAABzPwIARAUBAHRydWUA&#xD;&#xA;0r4RAAAAf3M/pQ9EBQEAdHJ1ZQBzP6YPRAUAAEZhbHNlANKnQgAAgD8/uA/SwA0AAADSp0IA&#xD;&#xA;AAAAP7gP0sHSvikAAAB/c1B/P6UPP6YPRAUBAHRydWUAc1B/P7sPPwgARAUAAGZhbHNlANKn&#xD;&#xA;QgAAgD8/sw/Sp1Q/CQBCAACAPz8JANKnQgAAAAA/ug/SwBcAAADSp0IAAAAAP7MP0qdCAACA&#xD;&#xA;Pz+6D9LB0sHSvqwAAABzPwIARAUBAHRydWUA0r4RAAAAc1B/cz+nD0QFAQB0cnVlAD+oD0QF&#xD;&#xA;AABGYWxzZQDSp0IAAIA/P7kP0sANAAAA0qdCAAAAAD+5D9LB0r4pAAAAf3NQfz+nDz+oD0QF&#xD;&#xA;AQB0cnVlAHNQfz+7Dz8IAEQFAABmYWxzZQDSp0IAAIA/P7QP0qdUPwoAQgAAgD8/CgDSp0IA&#xD;&#xA;AAAAP7oP0sAXAAAA0qdCAAAAAD+0D9KnQgAAgD8/ug/SwdLB0r5fAAAAf2RQgT8JAD8KAD/B&#xD;&#xA;D3M/AgBEBQEAdHJ1ZQDSviUAAABzUIE/rQ8/rg9EBQEAdHJ1ZQDSp0IAAIA/PwMA0qdCAAAA&#xD;&#xA;AD+7D9KnQgAAgD8/CADSwCEAAADSp0IAAAAAPwMA0qdCAACAPz+7D9KnQgAAAAA/CADSwdLB&#xD;&#xA;0r4QAAAAcz8DAEQFAABmYWxzZQDSp0IAAAAAP7YPP7cP0sHSvqwAAABzPwMARAUBAFRydWUA&#xD;&#xA;0r4RAAAAc1B/cz+pD0QFAQB0cnVlAD+qD0QFAABGYWxzZQDSp0IAAIA/P7wP0sANAAAA0qdC&#xD;&#xA;AAAAAD+8D9LB0r4pAAAAf3NQfz+pDz+qD0QFAQB0cnVlAHNQfz+/Dz8FAEQFAABmYWxzZQDS&#xD;&#xA;p0IAAIA/P7YP0qdUPwsAQgAAgD8/CwDSp0IAAAAAP74P0sAXAAAA0qdCAAAAAD+2D9KnQgAA&#xD;&#xA;gD8/vg/SwdLB0r6sAAAAcz8DAEQFAQB0cnVlANK+EQAAAHNQf3M/qw9EBQEAdHJ1ZQA/rA9E&#xD;&#xA;BQAARmFsc2UA0qdCAACAPz+9D9LADQAAANKnQgAAAAA/vQ/SwdK+KQAAAH9zUH8/qw8/rA9E&#xD;&#xA;BQEAdHJ1ZQBzUH8/vw8/BQBEBQAAZmFsc2UA0qdCAACAPz+3D9KnVD8MAEIAAIA/PwwA0qdC&#xD;&#xA;AAAAAD++D9LAFwAAANKnQgAAAAA/tw/Sp0IAAIA/P74P0sHSwdK+XwAAAH9kUIE/CwA/DAA/&#xD;&#xA;wQ9zPwMARAUBAFRydWUA0r4lAAAAc1CBP68PP7APRAUBAHRydWUA0qdCAACAPz8EANKnQgAA&#xD;&#xA;AAA/vw/Sp0IAAIA/PwUA0sAhAAAA0qdCAAAAAD8FANKnQgAAAAA/BADSp0IAAIA/P78P0sHS&#xD;&#xA;wdK+DQAAAHM/BABEBQAAZmFsc2UA0qdCAAAAAD+1D9LB0r4fAAAAcz8EAEQFAQB0cnVlANKn&#xD;&#xA;QgAAgD8/tQ/Sp1Q/DQBCAACAPz8NANLAFwAAANKnQgAAAAA/tQ/Sp0IAAAAAPw0A0sHSvjIA&#xD;&#xA;AAB/cT8NAD/BD3M/BABEBQEAVHJ1ZQDSvhEAAABzP7EPRAUBAFRydWUA0qdCAAAAAD/AD9LA&#xD;&#xA;DQAAANKnQgAAgD8/wA/SwdLB0tM=&lt;/ByteCode&gt;&#xA; &lt;LocalVars Count=&quot;14&quot; Version=&quot;1&quot;&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;9&quot; Id=&quot;0&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Timer&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; Id=&quot;1&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Trava_logica&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;30&quot; Id=&quot;2&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Partir_B1&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;41&quot; Id=&quot;3&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Partir_BS&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;52&quot; Id=&quot;4&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Partir_Boiler&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;67&quot; Id=&quot;5&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Trava_timer_BS&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;83&quot; Id=&quot;6&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Timer_desligamento&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;103&quot; Id=&quot;7&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Timer_desligamento2&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;124&quot; Id=&quot;8&quot; Length=&quot;4&quot; LineNumber=&quot;21&quot; Name=&quot;Trava_timer_BP&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;9&quot; Id=&quot;9&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;TimerB1&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;18&quot; Id=&quot;10&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;TimerB2&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;27&quot; Id=&quot;11&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;TimerBS1&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;37&quot; Id=&quot;12&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;TimerBS2&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA;  &lt;LocalVar ArraySize=&quot;0&quot; ColumnNumber=&quot;47&quot; Id=&quot;13&quot; Length=&quot;4&quot; LineNumber=&quot;22&quot; Name=&quot;Timer_Boiler&quot; StringLength=&quot;4&quot; SubType=&quot;0&quot; Type=&quot;59&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;/LocalVars&gt;&#xA; &lt;BindingVars Count=&quot;35&quot; Version=&quot;1&quot;&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4000&quot; Length=&quot;4&quot; LineNumber=&quot;2&quot; Name=&quot;Hab_caq&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;24&quot; ComlType=&quot;2&quot; Id=&quot;4001&quot; Length=&quot;4&quot; LineNumber=&quot;2&quot; Name=&quot;SP_temp&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;33&quot; ComlType=&quot;2&quot; Id=&quot;4002&quot; Length=&quot;4&quot; LineNumber=&quot;2&quot; Name=&quot;Temp_ext&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;43&quot; ComlType=&quot;2&quot; Id=&quot;4003&quot; Length=&quot;4&quot; LineNumber=&quot;2&quot; Name=&quot;Delay_reteste&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;58&quot; ComlType=&quot;2&quot; Id=&quot;4004&quot; Length=&quot;4&quot; LineNumber=&quot;2&quot; Name=&quot;Hab_caq_sem_logica&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4005&quot; Length=&quot;4&quot; LineNumber=&quot;6&quot; Name=&quot;Chsel_bp1_tela&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;31&quot; ComlType=&quot;2&quot; Id=&quot;4006&quot; Length=&quot;4&quot; LineNumber=&quot;6&quot; Name=&quot;Chsel_bp1_fisica&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;49&quot; ComlType=&quot;2&quot; Id=&quot;4007&quot; Length=&quot;4&quot; LineNumber=&quot;6&quot; Name=&quot;Chsel_bp2_tela&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;65&quot; ComlType=&quot;2&quot; Id=&quot;4008&quot; Length=&quot;4&quot; LineNumber=&quot;6&quot; Name=&quot;Chsel_bp2_fisica&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4009&quot; Length=&quot;4&quot; LineNumber=&quot;8&quot; Name=&quot;Chsel_bs1_tela&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;31&quot; ComlType=&quot;2&quot; Id=&quot;4010&quot; Length=&quot;4&quot; LineNumber=&quot;8&quot; Name=&quot;Chsel_bs1_fisica&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;49&quot; ComlType=&quot;2&quot; Id=&quot;4011&quot; Length=&quot;4&quot; LineNumber=&quot;8&quot; Name=&quot;Chsel_bs2_tela&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;65&quot; ComlType=&quot;2&quot; Id=&quot;4012&quot; Length=&quot;4&quot; LineNumber=&quot;8&quot; Name=&quot;Chsel_bs2_fisica&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4013&quot; Length=&quot;4&quot; LineNumber=&quot;10&quot; Name=&quot;Status_BP1&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;27&quot; ComlType=&quot;2&quot; Id=&quot;4014&quot; Length=&quot;4&quot; LineNumber=&quot;10&quot; Name=&quot;Status_BP2&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;39&quot; ComlType=&quot;2&quot; Id=&quot;4015&quot; Length=&quot;4&quot; LineNumber=&quot;10&quot; Name=&quot;Status_BS1&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;51&quot; ComlType=&quot;2&quot; Id=&quot;4016&quot; Length=&quot;4&quot; LineNumber=&quot;10&quot; Name=&quot;Status_BS2&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;63&quot; ComlType=&quot;2&quot; Id=&quot;4017&quot; Length=&quot;4&quot; LineNumber=&quot;10&quot; Name=&quot;Status_Boiler&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;2&quot; Id=&quot;4018&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;Modo_Inverno&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;30&quot; ComlType=&quot;2&quot; Id=&quot;4019&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;CMD_BP1&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;39&quot; ComlType=&quot;2&quot; Id=&quot;4020&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;CMD_BP2&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;48&quot; ComlType=&quot;2&quot; Id=&quot;4021&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;CMD_Boiler&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;60&quot; ComlType=&quot;2&quot; Id=&quot;4022&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;CMD_BS1&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;69&quot; ComlType=&quot;2&quot; Id=&quot;4023&quot; Length=&quot;4&quot; LineNumber=&quot;13&quot; Name=&quot;CMD_BS2&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;2&quot; Id=&quot;4024&quot; Length=&quot;4&quot; LineNumber=&quot;16&quot; Name=&quot;ALM_DES_BP1&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;29&quot; ComlType=&quot;2&quot; Id=&quot;4025&quot; Length=&quot;4&quot; LineNumber=&quot;16&quot; Name=&quot;ALM_DES_BP2&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;42&quot; ComlType=&quot;2&quot; Id=&quot;4026&quot; Length=&quot;4&quot; LineNumber=&quot;16&quot; Name=&quot;ALM_BP_Indisp&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;57&quot; ComlType=&quot;2&quot; Id=&quot;4027&quot; Length=&quot;4&quot; LineNumber=&quot;16&quot; Name=&quot;ALM_BP_falha_partida&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;2&quot; Id=&quot;4028&quot; Length=&quot;4&quot; LineNumber=&quot;17&quot; Name=&quot;ALM_DES_BS1&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;29&quot; ComlType=&quot;2&quot; Id=&quot;4029&quot; Length=&quot;4&quot; LineNumber=&quot;17&quot; Name=&quot;ALM_DES_BS2&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;41&quot; ComlType=&quot;2&quot; Id=&quot;4030&quot; Length=&quot;4&quot; LineNumber=&quot;17&quot; Name=&quot;ALM_BS_Indisp&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;56&quot; ComlType=&quot;2&quot; Id=&quot;4031&quot; Length=&quot;4&quot; LineNumber=&quot;17&quot; Name=&quot;ALM_BS_falha_partida&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;16&quot; ComlType=&quot;2&quot; Id=&quot;4032&quot; Length=&quot;4&quot; LineNumber=&quot;18&quot; Name=&quot;ALM_falha_cmd_boiler&quot; StringLength=&quot;4&quot; SubType=&quot;33&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;&gt;0&lt;/InitialValue&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;15&quot; ComlType=&quot;2&quot; Id=&quot;4033&quot; Length=&quot;4&quot; LineNumber=&quot;24&quot; Name=&quot;Timer30&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;/&gt;&#xA;  &lt;/BindingVar&gt;&#xA;  &lt;BindingVar ArraySize=&quot;0&quot; ColumnNumber=&quot;24&quot; ComlType=&quot;2&quot; Id=&quot;4034&quot; Length=&quot;4&quot; LineNumber=&quot;24&quot; Name=&quot;Timer60&quot; StringLength=&quot;4&quot; SubType=&quot;32&quot; Type=&quot;59&quot; Unit=&quot;65537&quot; UnitPrefix=&quot;0&quot; Version=&quot;2&quot;&gt;&#xA;   &lt;InitialValue Version=&quot;1&quot;/&gt;&#xA;  &lt;/BindingVar&gt;&#xA; &lt;/BindingVars&gt;&#xA; &lt;PublicVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;FunctionVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;XmlNodeVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;ObjectVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;Labels Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;WebServiceVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;BufferedVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;DataFileVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA; &lt;TrendLogVars Count=&quot;0&quot; Version=&quot;1&quot;/&gt;&#xA;&lt;/PEObject&gt;&#xA;"/>
+          </Parameter>
+        </PropertyGroup>
+      </PropertyTab>
+      <PropertyTab Name = "InVarTab">
+        <PropertyGroup Name = "InVarGroup">
+          <Variable Name                  = "Hab_caq"
+                    DisplayName           = "Hab_caq"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "SP_temp"
+                    DisplayName           = "SP_temp"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Temp_ext"
+                    DisplayName           = "Temp_ext"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Delay_reteste"
+                    DisplayName           = "Delay_reteste"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Hab_caq_sem_logica"
+                    DisplayName           = "Hab_caq_sem_logica"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bp1_tela"
+                    DisplayName           = "Chsel_bp1_tela"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bp1_fisica"
+                    DisplayName           = "Chsel_bp1_fisica"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bp2_tela"
+                    DisplayName           = "Chsel_bp2_tela"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bp2_fisica"
+                    DisplayName           = "Chsel_bp2_fisica"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bs1_tela"
+                    DisplayName           = "Chsel_bs1_tela"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bs1_fisica"
+                    DisplayName           = "Chsel_bs1_fisica"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bs2_tela"
+                    DisplayName           = "Chsel_bs2_tela"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Chsel_bs2_fisica"
+                    DisplayName           = "Chsel_bs2_fisica"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Status_BP1"
+                    DisplayName           = "Status_BP1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Status_BP2"
+                    DisplayName           = "Status_BP2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Status_BS1"
+                    DisplayName           = "Status_BS1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Status_BS2"
+                    DisplayName           = "Status_BS2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Status_Boiler"
+                    DisplayName           = "Status_Boiler"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Timer30"
+                    DisplayName           = "Timer30"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "Timer60"
+                    DisplayName           = "Timer60"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "Application"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Sys"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "0"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+        </PropertyGroup>
+      </PropertyTab>
+      <PropertyTab Name = "OutVarTab">
+        <PropertyGroup Name = "OutVarGroup">
+          <Variable Name                  = "Modo_Inverno"
+                    DisplayName           = "Modo_Inverno"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CMD_BP1"
+                    DisplayName           = "CMD_BP1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CMD_BP2"
+                    DisplayName           = "CMD_BP2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CMD_Boiler"
+                    DisplayName           = "CMD_Boiler"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CMD_BS1"
+                    DisplayName           = "CMD_BS1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "CMD_BS2"
+                    DisplayName           = "CMD_BS2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_DES_BP1"
+                    DisplayName           = "ALM_DES_BP1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_BP_falha_partida"
+                    DisplayName           = "ALM_BP_falha_partida"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_DES_BP2"
+                    DisplayName           = "ALM_DES_BP2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_DES_BS1"
+                    DisplayName           = "ALM_DES_BS1"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_DES_BS2"
+                    DisplayName           = "ALM_DES_BS2"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_BS_Indisp"
+                    DisplayName           = "ALM_BS_Indisp"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_BS_falha_partida"
+                    DisplayName           = "ALM_BS_falha_partida"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_falha_cmd_boiler"
+                    DisplayName           = "ALM_falha_cmd_boiler"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+          <Variable Name                  = "ALM_BP_Indisp"
+                    DisplayName           = "ALM_BP_Indisp"
+                    Description           = ""
+                    Visibility            = "Normal"
+                    Optional              = "0"
+                    VariableReference     = "No"
+                    ReadOnly              = "0"
+                    Static                = "0"
+                    Scope                 = "Srv"
+                    Copy                  = "1"
+                    Nullable              = "1"
+                    ObjectFilter          = ""
+                    >
+              <Type Configurable = "No" Value = "system.pt.Float"/>
+              <Unit Configurable = "No" Value = "0x10001"/>
+              <InitReference/>
+              <Runtime Nullable = "1">
+                <ReadOnly    Configurable = "No" Value = "1"/>
+                <RetainLevel Configurable = "No" Value = "No"/>
+                <Forceable   Configurable = "No" Value = "1"/>
+                <InitValue Null="1"/>
+              </Runtime>
+          </Variable>
+        </PropertyGroup>
+      </PropertyTab>
+
+
+    </ObjectType>
+
+  </Types>
+<ExportedObjects>
+  <OI NAME="Fraport" TYPE="system.base.Folder">
+    <OI NAME="Script Program" TYPE="udt.2c6jkjwt4nrurg5j7niscuauge.3d6kxa4vmvvbl5igm5vk75vc6tnxnbyu">
+      <PI Name="Chsel_bp1_fisica">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bp1_fisica" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bp1_tela">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bp1_tela" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bp2_fisica">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bp2_fisica" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bp2_tela">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bp2_tela" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bs1_fisica">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bs1_fisica" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bs1_tela">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bs1_tela" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bs2_fisica">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bs2_fisica" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Chsel_bs2_tela">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Chsel_bs2_tela" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Delay_reteste">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Analógicos/Delay_reteste" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Hab_caq">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Habilita CAQ" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Hab_caq_sem_logica">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Habilita CAQ sem Logica" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="SP_temp">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Analógicos/SP_temp" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Status_BP1">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Status_BP1" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Status_BP2">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Status_BP2" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Status_BS1">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Status_BS1" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Status_Boiler">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Digitais/Status_Boiler" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Task">
+        <Reference DeltaFilter="0" Locked="1" Object="~/System/Tasks/Task 3" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Temp_ext">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Analógicos/Temp_ext" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Timer30">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Analógicos/Timer30" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+      <PI Name="Timer60">
+        <Reference DeltaFilter="0" Object="../Modbus TCP Gateway/CAQ/Pontos Analógicos/Timer60" Property="Value" Retransmit="0" TransferRate="10"/>
+      </PI>
+    </OI>
+    <OI NAME="Modbus TCP Gateway" TYPE="modbus.network.GatewayNetwork">
+      <PI Name="EnableDisable" Value="1"/>
+      <PI Name="IPAddress" Value="10.67.116.76"/>
+      <OI DESCR="1" NAME="CAQ" TYPE="modbus.network.MasterDevice">
+        <OI NAME="Pontos Analógicos" TYPE="system.base.Folder">
+          <OI NAME="SP_temp" TYPE="modbus.point.AnalogOutput">
+            <PI Name="RegisterNumber" Value="1003"/>
+            <PI Name="RegisterType" Value="7"/>
+          </OI>
+          <OI NAME="Temp_ext" TYPE="modbus.point.AnalogOutput">
+            <PI Name="RegisterNumber" Value="1005"/>
+            <PI Name="RegisterType" Value="7"/>
+          </OI>
+          <OI NAME="Delay_reteste" TYPE="modbus.point.AnalogOutput">
+            <PI Name="RegisterNumber" Value="1000"/>
+            <PI Name="RegisterType" Value="7"/>
+          </OI>
+          <OI NAME="Timer30" TYPE="modbus.point.AnalogInput">
+            <PI Name="RegisterNumber" Value="1007"/>
+            <PI Name="RegisterType" Value="7"/>
+          </OI>
+          <OI NAME="Timer60" TYPE="modbus.point.AnalogInput">
+            <PI Name="RegisterNumber" Value="1009"/>
+            <PI Name="RegisterType" Value="5"/>
+          </OI>
+        </OI>
+        <OI NAME="Pontos Digitais" TYPE="system.base.Folder">
+          <OI NAME="Habilita CAQ" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2008"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Habilita CAQ sem Logica" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2009"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Chsel_bp1_fisica" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2000"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Chsel_bp2_fisica" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2002"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Chsel_bs1_fisica" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2004"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Chsel_bs2_fisica" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2006"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Status_BP1" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2011"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Status_BP2" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2012"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Status_BS1" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2014"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Status_Boiler" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2010"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+          <OI NAME="Chsel_bp1_tela" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2001"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Chsel_bp2_tela" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2003"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Chsel_bs1_tela" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2005"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Chsel_bs2_tela" TYPE="modbus.point.BinaryOutput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="2007"/>
+            <PI Name="RegisterType" Value="1"/>
+            <PI Name="WriteFunctionCode" Value="6"/>
+          </OI>
+          <OI NAME="Status_BS2" TYPE="modbus.point.BinaryInput">
+            <PI Name="ReadFunctionCode" Value="3"/>
+            <PI Name="RegisterNumber" Value="1012"/>
+            <PI Name="RegisterType" Value="1"/>
+          </OI>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="Pontos Virtuais" TYPE="system.base.Folder">
+      <OI NAME="Modo Inverno" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="Modo_Inverno" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CMD_BP1" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="CMD_BP1" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CMD_BP2" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="CMD_BP2" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CMD_Boiler" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="CMD_Boiler" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CMD_BS1" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="CMD_BS1" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CMD_BS2" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="CMD_BS2" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_DES_BP1" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_DES_BP1" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_DES_BP2" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_DES_BP2" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_DES_BS1" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_DES_BS1" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_DES_BS2" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_DES_BS2" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_BP_Indisp" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_BP_Indisp" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_BP_falha_partida" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_BP_falha_partida" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_BS_Indisp" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_BS_Indisp" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_BS_falha_partida" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_BS_falha_partida" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="ALM_falha_cmd_boiler" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../Script Program" Property="ALM_falha_cmd_boiler" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+    </OI>
+  </OI>
+</ExportedObjects>
+
+</ObjectSet>

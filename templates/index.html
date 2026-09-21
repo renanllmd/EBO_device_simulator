@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EBO Device Simulator</title>
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+ 
+<body>
+ 
+<header>
+  <h1>⬡ EBO Device Simulator</h1>
+  <div class="header-actions">
+    <button class="btn-download btn-toolbar-pdf btn-toolbar-bin" onclick="baixarPDF()" title="Exportar auditoria como PDF" style="margin-left: auto;">⬇ PDF</button>
+    <button class="btn-download btn-toolbar-bin" onclick="window.location='/download-log-xlsx'" title="Exportar auditoria como Excel" style="margin-left: auto;">⬇ XLSX</button>
+  </div>
+  <span id="badge">● verificando...</span>
+</header>
+ 
+<div class="layout">
+ 
+  <aside class="sidebar">
+
+    <!-- ── STICKY HEADER: search + toolbar ── -->
+    <div class="sidebar-sticky">
+
+      <div class="sidebar-title">Dispositivos</div>
+
+      <!-- Search with inline clear button -->
+      <div class="search-wrap">
+        <input id="search" type="text" placeholder="/ buscar ponto..." autocomplete="off">
+        <button id="search-clear" class="search-clear-btn" onclick="limparBusca()" title="Limpar busca">✕</button>
+      </div>
+
+      <!-- Result counter -->
+      <div id="search-info" class="search-info"></div>
+
+      <!-- ── TREE TOOLBAR ── (Expandir Tudo removido) -->
+      <div class="tree-toolbar">
+        <button class="btn btn-toolbar" onclick="recolherTudo()" title="Recolher tudo">↑</button>
+        <button class="btn btn-toolbar-bin btn-toolbar" onclick="filtrarBinarios()" title="Selecionar apenas binários">Binários</button>
+        <button class="btn btn-toolbar-ana btn-toolbar" onclick="filtrarAnalogicos()" title="Selecionar apenas analógicos">Analógicos</button>
+      </div>
+
+    </div><!-- /sidebar-sticky -->
+
+    <!-- Scrollable tree -->
+    <div id="tree-wrap"><div id="tree"></div></div>
+
+  </aside>
+ 
+  <section class="main">
+ 
+    <div class="card">
+      <div class="card-label">// importar xml</div>
+      <div id="upload-area"
+           onclick="document.getElementById('file-input').click()"
+           ondragover="event.preventDefault();this.classList.add('drag')"
+           ondragleave="this.classList.remove('drag')"
+           ondrop="handleDrop(event)">
+        <input type="file" id="file-input" accept=".xml" onchange="handleFile(this.files[0])">
+        arraste ou clique para selecionar um arquivo <strong>.xml</strong>
+        <div id="upload-status"></div>
+      </div>
+    </div>
+ 
+    <div class="card" id="panel-point">
+      <div class="point-name" id="lbl-nome">—</div>
+ 
+      <div class="meta-grid">
+        <div class="meta-item">
+          <label>Dispositivo</label>
+          <span class="c-device" id="lbl-device">—</span>
+        </div>
+        <div class="meta-item">
+          <label>Registro</label>
+          <span class="c-reg" id="lbl-reg">—</span>
+        </div>
+        <div class="meta-item">
+          <label>Register Type</label>
+          <span class="c-tipo" id="lbl-tipo">—</span>
+        </div>
+        <div class="meta-item">
+          <label>Bit</label>
+          <span class="c-bit" id="lbl-bit">—</span>
+        </div>
+        <div class="meta-item">
+          <label>Function code</label>
+          <span class="c-function" id="lbl-function">—</span>
+        </div>
+        <div class="meta-item">
+          <label>Unit ID</label>
+          <span class="c-unit_id" id="lbl-unit_id">—</span>
+        </div>
+      </div>
+
+      <hr class="sep">
+ 
+      <div class="cmd-label">// enviar valor</div>
+ 
+      <div id="row-num">
+        <input type="number" id="input-valor" value="0" step="any">
+        <button class="btn btn-send"
+                onclick="enviar(document.getElementById('input-valor').value)">
+          ENVIAR →
+        </button>
+      </div>
+ 
+      <div id="row-bin">
+        <button class="btn btn-true" onclick="enviar('true')">✔ TRUE</button>
+        <button class="btn btn-false" onclick="enviar('false')">✖ FALSE</button>
+      </div>
+    </div>
+ 
+    <div id="batch-panel" class="card" style="display:none">
+      <div class="card-label">// envio em lote</div>
+
+      <div class="batch-header">
+        <span class="batch-count-label">
+          <span id="batch-count">0</span> pontos selecionados
+        </span>
+        <button class="btn-batch-clear" onclick="limparSelecao()">✕ limpar seleção</button>
+      </div>
+
+      <div id="batch-row-bin" class="batch-row" style="display:none">
+        <span class="batch-type-label">
+          <span class="dot dot-bin"></span>binários
+          (<span id="batch-count-bin">0</span>)
+        </span>
+        <div class="batch-inputs">
+          <select id="batch-val-bin" class="batch-select">
+            <option value="true">TRUE</option>
+            <option value="false">FALSE</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="batch-row-ana" class="batch-row" style="display:none">
+        <span class="batch-type-label">
+          <span class="dot dot-ana"></span>analógicos
+          (<span id="batch-count-ana">0</span>)
+        </span>
+        <div class="batch-inputs">
+          <input type="number" id="batch-val-ana" value="0" step="any" class="batch-input-num">
+        </div>
+      </div>
+
+      <button class="btn btn-send" onclick="enviarBatch()" style="display: flex; align-items: center; width: 100%;" >
+        ⟶ ENVIAR PARA TODOS
+      </button>
+    </div>
+
+    <div id="placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+      </svg>
+      Requisitos de funcionamento: <br>
+      - Placa de rede ativa <br>
+      - Docker desktop aberto <br>
+      - EBO local aberto <br>
+      - Dispositivo Modbus configurado
+    </div>
+ 
+  </section>
+</div>
+ 
+<div id="toast"></div>
+
+<div id="loading-popup">
+  <div class="loading-content">
+    <div class="spinner"></div>
+    <div id="loading-text"></div>
+  </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------
+// ESTADO GLOBAL
+// ---------------------------------------------------------------
+window.addEventListener('pagehide', function (event) {
+        // Envia um aviso rápido para o Flask fechar o processo do Python
+        navigator.sendBeacon('/shutdown');
+    });
+let pontoAtual         = null;
+let pontosSelecionados = [];
+let _allPoints         = [];   // flat list built by buildTree (dados)
+let _searchDebounce    = null;
+
+// ---------------------------------------------------------------
+// TREE CACHE
+// ---------------------------------------------------------------
+// Evita querySelectorAll repetidos durante busca e filtros.
+// Populados em buildTree(), zerados a cada rebuild.
+
+let _pointElements  = [];          // Array<HTMLElement> — todos os .point-item, em ordem
+let _detailsElements = [];         // Array<HTMLElement> — todos os <details>
+let _pointMap       = new Map();   // Map<"root|network|name", HTMLElement> — O(1) lookup
+let _lastSelectedIndex = null;     // Índice do último ponto clicado (Shift+Click)
+
+// ---------------------------------------------------------------
+// TOAST
+// ---------------------------------------------------------------
+const _toastQueue = [];
+let _toastPersistente = false;
+
+function toast(msg, tipo, persistente = false) {
+  // Se há um toast persistente ativo, enfileira os não-persistentes
+  if (_toastPersistente && !persistente) {
+    _toastQueue.push({ msg, tipo });
+    return;
+  }
+  _exibirToast(msg, tipo, persistente);
+}
+
+function _exibirToast(msg, tipo, persistente) {
+  const el = document.getElementById('toast');
+if (tipo === 'loading') {
+  el.innerHTML = `<span class="toast-spinner"></span>${msg}`;
+} else {
+  el.textContent = msg;
+}
+el.className = 'show ' + (tipo || '');
+  clearTimeout(el._t);
+  _toastPersistente = persistente;
+
+  if (!persistente) {
+    el._t = setTimeout(() => {
+      el.className = '';
+      _toastPersistente = false;
+      _dequeueToast();
+    }, 3500);
+  }
+}
+
+function _dequeueToast() {
+  if (_toastQueue.length === 0) return;
+  const next = _toastQueue.shift();
+  _exibirToast(next.msg, next.tipo, false);
+}
+
+function fecharToastPersistente() {
+  _toastPersistente = false;
+  const el = document.getElementById('toast');
+  el.className = '';
+  _dequeueToast();
+}
+
+// ---------------------------------------------------------------
+// STATUS
+// ---------------------------------------------------------------
+async function checkStatus() {
+  const badge = document.getElementById('badge');
+  try {
+    const d = await (await fetch('/ping')).json();
+    if (d.ok) { badge.textContent = '● online'; badge.className = 'online'; }
+    else throw 0;
+  } catch {
+    badge.textContent = '● offline'; badge.className = 'offline';
+  }
+}
+checkStatus();
+setInterval(checkStatus, 8000);
+
+// ---------------------------------------------------------------
+// DOWNLOAD PDF / XLSX
+// ---------------------------------------------------------------
+async function baixarPDF() {
+  const btn = document.querySelector('.btn-download');
+  const original = btn.textContent;
+  btn.textContent = '⏳ gerando...';
+  btn.disabled = true;
+  try {
+    const resp = await fetch('/download-log-pdf');
+    if (!resp.ok) { toast('erro ao gerar PDF', 'err'); return; }
+    const blob = await resp.blob();
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = resp.headers.get('Content-Disposition')?.match(/filename="(.+)"/)?.[1] || 'auditoria.pdf';
+    a.click();
+    URL.revokeObjectURL(url);
+    toast('PDF exportado com sucesso', 'ok');
+  } catch (e) {
+    toast('erro: ' + e, 'err');
+  } finally {
+    btn.textContent = original;
+    btn.disabled = false;
+  }
+}
+
+// ---------------------------------------------------------------
+// UPLOAD / DROP
+// ---------------------------------------------------------------
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('upload-area').classList.remove('drag');
+  if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+}
+
+function handleFile(file) {
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (ev) => {
+    toast('Realizando rebuild dos containers aguarde... ', 'loading', true);
+    try {
+      const fd = new FormData();
+      fd.append('xml', new Blob([ev.target.result], { type:'text/xml' }), file.name);
+      const data = await (await fetch('/upload-xml', { method:'POST', body: fd })).json();
+      const avisosCriticos = (data.avisos || []).filter(av => _avisoCritico(av));
+      document.getElementById('toast').className = '';
+      if (data.ok) {
+        document.getElementById('upload-status').textContent =
+          `✓ ${data.networks} redes · ${data.points} pontos`;
+        buildTree(data.tree);
+
+      if (avisosCriticos.length > 0) {
+        avisosCriticos.forEach(av => _toastQueue.push({ msg: av, tipo: 'warn' }));
+      } else {
+        _toastQueue.push({ msg: `${data.points} pontos carregados`, tipo: 'ok' });
+      }
+      } else {
+        const msg = data.avisos && data.avisos.length > 0
+          ? data.error + ' — ' + data.avisos[0]
+          : data.error;
+        toast('erro: ' + msg, 'err');
+      }
+
+    } catch (e) {
+      document.getElementById('toast').className = '';
+      _toastQueue.push({ msg: 'erro no rebuild: ' + e, tipo: 'err' });
+    }      
+    finally{
+        fecharToastPersistente();
+      }
+  };
+  reader.readAsText(file, 'utf-8');
+}
+
+// ---------------------------------------------------------------
+// AVISO CRITICO
+// ---------------------------------------------------------------
+
+function _avisoCritico(av) {
+  const s = av.toLowerCase();
+  // Sem RegisterNumber válido = ponto não será simulado
+  if (s.includes('sem registernumber')) return true;
+  // Erros de parse/tipo inesperados
+  if (s.includes('erro') || s.includes('error')) return true;
+  // Explicitamente não-crítico: rede sem IP é comportamento esperado
+  // para gateways — ignorar
+  if (s.includes('sem ipaddress') || s.includes('sem ip')) return false;
+  // Conservador: qualquer outro aviso exibe
+  return true;
+}
+
+// ---------------------------------------------------------------
+// ÁRVORE — DocumentFragment + cache completo
+// ---------------------------------------------------------------
+function buildTree(tree) {
+  const container = document.getElementById('tree');
+
+  // Reset estado
+  pontosSelecionados = [];
+  _allPoints         = [];
+  _pointElements     = [];
+  _detailsElements   = [];
+  _pointMap          = new Map();
+  _lastSelectedIndex = null;
+  atualizarBatchPanel();
+
+  tree.sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'));
+
+  const frag = document.createDocumentFragment();
+
+  for (const eq of tree) {
+    eq.children.sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'));
+
+    const detEq = document.createElement('details');
+    detEq._childFolders = [];
+    detEq.className = 'folder-primary';
+    detEq.open = tree.length === 1;
+
+    // Recursive collapse: fechar pai fecha todos descendentes
+    detEq.addEventListener('toggle', () => {
+      if (!detEq.open) {
+        _collapseDescendants(detEq);
+      }
+    });
+
+    _detailsElements.push(detEq);
+
+    const sumEq = document.createElement('summary');
+    sumEq.textContent = eq.label;
+    detEq.appendChild(sumEq);
+
+    const netFrag = document.createDocumentFragment();
+
+    for (const net of eq.children) {
+      net.children.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+
+      const detNet = document.createElement('details');
+      detEq._childFolders.push(detNet);
+      detNet.className = 'folder-secondary';
+
+      // Referências diretas aos point-items desta pasta (evita querySelectorAll no search)
+      detNet._pointRefs = [];
+
+      // Recursive collapse na pasta secundária
+      detNet.addEventListener('toggle', () => {
+        if (!detNet.open) {
+          _collapseDescendants(detNet);
+        }
+      });
+
+      _detailsElements.push(detNet);
+
+      const sumNet = document.createElement('summary');
+      sumNet.textContent = `${net.label} (${net.children.length})`;
+      detNet.appendChild(sumNet);
+
+      const ptFrag = document.createDocumentFragment();
+
+      for (const p of net.children) {
+        const globalIndex = _allPoints.length;
+        _allPoints.push(p);
+
+        const div = document.createElement('div');
+        div.className = 'point-item';
+        div.innerHTML = `<input type="checkbox" class="point-check"><span>${p.name}</span>`;
+
+        // Índice global para Shift+Click — sem JSON.stringify no dataset
+        div.dataset.index = globalIndex;
+
+        // Mapa para lookup O(1) nos filtros
+        const mapKey = `${p.root}|${p.network}|${p.name}`;
+        _pointMap.set(mapKey, div);
+
+        // Cache linear para search e range selection
+        _pointElements.push(div);
+        detNet._pointRefs.push(div);
+
+        div.addEventListener('click', (e) => {
+          // Clique no checkbox: toggle batch individual
+          if (e.target.classList.contains('point-check')) {
+            _lastSelectedIndex = globalIndex;
+            toggleBatch(div, p);
+            return;
+          }
+
+          // Shift+Click: seleção de intervalo
+          if (e.shiftKey && _lastSelectedIndex !== null) {
+            _selecionarIntervalo(_lastSelectedIndex, globalIndex);
+            return;
+          }
+
+          // Ctrl/Cmd+Click: toggle batch individual
+          if (e.ctrlKey || e.metaKey) {
+            _lastSelectedIndex = globalIndex;
+            toggleBatch(div, p);
+            return;
+          }
+
+          // Clique simples: seleção individual
+          _lastSelectedIndex = globalIndex;
+          selecionarPonto(div, p);
+        });
+
+        ptFrag.appendChild(div);
+      }
+
+      detNet.appendChild(ptFrag);
+      netFrag.appendChild(detNet);
+    }
+
+    detEq.appendChild(netFrag);
+    frag.appendChild(detEq);
+  }
+
+  // Uma única operação de escrita no DOM
+  container.innerHTML = '';
+  container.appendChild(frag);
+
+  // Atualiza info de busca com total
+  atualizarSearchInfo('', _allPoints.length, _allPoints.length);
+}
+
+// ---------------------------------------------------------------
+// RECURSIVE COLLAPSE — helper usando cache de details
+// ---------------------------------------------------------------
+// Fecha todos os <details> descendentes de um elemento pai.
+// Usa iteração direta sobre _detailsElements filtrado pelo pai
+// para evitar querySelectorAll no momento do toggle.
+function _collapseDescendants(parentDetails) {
+
+  const descendants = parentDetails._descendants;
+
+  if (!descendants) return;
+
+  for (let i = 0; i < descendants.length; i++) {
+    descendants[i].open = false;
+  }
+}
+
+// ---------------------------------------------------------------
+// SHIFT+CLICK — seleção de intervalo
+// ---------------------------------------------------------------
+// Seleciona todos os pontos visíveis entre dois índices globais.
+// Usa _pointElements (O(N) linear, sem querySelectorAll).
+function _selecionarIntervalo(fromIndex, toIndex) {
+  const start = Math.min(fromIndex, toIndex);
+  const end   = Math.max(fromIndex, toIndex);
+
+  for (let i = start; i <= end; i++) {
+    const el = _pointElements[i];
+    if (!el || el.classList.contains('hidden')) continue;
+
+    const p = _allPoints[i];
+    const jaSelecionado = pontosSelecionados.some(
+      x => x.root === p.root && x.network === p.network && x.name === p.name
+    );
+    if (!jaSelecionado) {
+      pontosSelecionados.push(p);
+      el.classList.add('selected-batch');
+      const cb = el.querySelector('.point-check');
+      if (cb) cb.checked = true;
+    }
+  }
+
+  _lastSelectedIndex = toIndex;
+  atualizarBatchPanel();
+}
+
+// ---------------------------------------------------------------
+// TREE TOOLBAR — Recolher / Filtros  (Expandir Tudo removido)
+// ---------------------------------------------------------------
+function recolherTudo() {
+  // Fecha apenas as pastas primárias; o listener de toggle
+  // cuida de recolher os filhos recursivamente via _collapseDescendants.
+  for (let i = 0; i < _detailsElements.length; i++) {
+    if (_detailsElements[i].classList.contains('folder-primary')) {
+      _detailsElements[i].open = false;
+    }
+  }
+}
+
+function filtrarBinarios() {
+  const alvos = _allPoints.filter(p => ehBinario(p));
+  aplicarFiltroSelecao(alvos, 'binários');
+}
+
+function filtrarAnalogicos() {
+  const alvos = _allPoints.filter(p => !ehBinario(p));
+  aplicarFiltroSelecao(alvos, 'analógicos');
+}
+
+// ---------------------------------------------------------------
+// FILTER OPTIMIZATION — O(N) com _pointMap
+// ---------------------------------------------------------------
+function aplicarFiltroSelecao(lista, tipoLabel) {
+  limparSelecao();
+
+  for (let i = 0; i < lista.length; i++) {
+    const p  = lista[i];
+    const key = `${p.root}|${p.network}|${p.name}`;
+    const el  = _pointMap.get(key);          // O(1) — sem querySelectorAll
+    if (!el) continue;
+
+    pontosSelecionados.push(p);
+    el.classList.add('selected-batch');
+    const cb = el.querySelector('.point-check');
+    if (cb) cb.checked = true;
+  }
+
+  atualizarBatchPanel();
+  toast(`${lista.length} ${tipoLabel} selecionados`, 'ok');
+}
+
+// ---------------------------------------------------------------
+// MULTI-SELECT — toggle individual
+// ---------------------------------------------------------------
+function toggleBatch(el, p) {
+  const idx = pontosSelecionados.findIndex(
+    x => x.root === p.root && x.network === p.network && x.name === p.name
+  );
+  const cb = el.querySelector('.point-check');
+  if (idx === -1) {
+    pontosSelecionados.push(p);
+    el.classList.add('selected-batch');
+    if (cb) cb.checked = true;
+  } else {
+    pontosSelecionados.splice(idx, 1);
+    el.classList.remove('selected-batch');
+    if (cb) cb.checked = false;
+  }
+  atualizarBatchPanel();
+}
+
+// ---------------------------------------------------------------
+// LIMPAR SELEÇÃO — usa _pointElements (sem querySelectorAll)
+// ---------------------------------------------------------------
+function limparSelecao() {
+  pontosSelecionados = [];
+  for (let i = 0; i < _pointElements.length; i++) {
+    const el = _pointElements[i];
+    if (el.classList.contains('selected-batch')) {
+      el.classList.remove('selected-batch');
+      const cb = el.querySelector('.point-check');
+      if (cb) cb.checked = false;
+    }
+  }
+  atualizarBatchPanel();
+}
+
+function atualizarBatchPanel() {
+  const panel = document.getElementById('batch-panel');
+  const total = pontosSelecionados.length;
+  panel.style.display = total > 0 ? 'block' : 'none';
+  document.getElementById('batch-count').textContent = total;
+
+  const binarios   = pontosSelecionados.filter(p => ehBinario(p));
+  const analogicos = pontosSelecionados.filter(p => !ehBinario(p));
+
+  document.getElementById('batch-row-bin').style.display =
+    binarios.length > 0 ? 'flex' : 'none';
+  document.getElementById('batch-row-ana').style.display =
+    analogicos.length > 0 ? 'flex' : 'none';
+
+  document.getElementById('batch-count-bin').textContent = binarios.length;
+  document.getElementById('batch-count-ana').textContent = analogicos.length;
+}
+
+function ehBinario(p) {
+  if (p.is_binary === true) return true;
+
+  const fc = parseInt(p.fc);
+
+  if (fc === 1 || fc === 2) return true;
+
+  if (p.bit != null) return true;
+
+  return false;
+}
+
+// ---------------------------------------------------------------
+// ENVIO BATCH
+// ---------------------------------------------------------------
+async function enviarBatch() {
+  if (pontosSelecionados.length === 0) {
+    toast('nenhum ponto selecionado', 'err'); return;
+  }
+
+  const binarios   = pontosSelecionados.filter(p => ehBinario(p));
+  const analogicos = pontosSelecionados.filter(p => !ehBinario(p));
+  const valorBin   = document.getElementById('batch-val-bin').value;
+  const valorAna   = document.getElementById('batch-val-ana').value;
+
+  if (binarios.length > 0 && !['true','false','1','0'].includes(valorBin)) {
+    toast('valor binário inválido (use true/false/0/1)', 'err'); return;
+  }
+  if (analogicos.length > 0 && isNaN(parseFloat(valorAna))) {
+    toast('valor analógico inválido', 'err'); return;
+  }
+
+  const payload = {
+    analogicos: analogicos.map(p => ({
+      root: p.root, net: p.network, ponto: p.name, unit_id: p.unit_id
+    })),
+    binarios: binarios.map(p => ({
+      root: p.root, net: p.network, ponto: p.name, unit_id: p.unit_id
+    })),
+    valor_analogico: valorAna,
+    valor_binario:   valorBin
+  };
+
+  try {
+    const r    = await fetch('/set-batch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await r.json();
+
+    if (data.falhas === 0) {
+      toast(`✓ ${data.sucesso} pontos atualizados`, 'ok');
+    } 
+    else {
+      toast(`✓ ${data.sucesso} enviados  ✖ ${data.falhas} falharam`, 'err');
+    }
+  } catch (e) {
+    toast('erro de conexão: ' + e, 'err');
+  } 
+  
+}
+
+// ---------------------------------------------------------------
+// BUSCA — debounce 200ms + caches + _pointRefs para auto-open
+// ---------------------------------------------------------------
+function atualizarSearchInfo(q, visivel) {
+  const info = document.getElementById('search-info');
+  const clr  = document.getElementById('search-clear');
+  if (!q) {
+    info.textContent  = '';
+    clr.style.display = 'none';
+  } else {
+    info.textContent  = `${visivel} resultado${visivel !== 1 ? 's' : ''}`;
+    clr.style.display = 'flex';
+  }
+}
+
+function limparBusca() {
+  const inp = document.getElementById('search');
+  inp.value = '';
+  executarBusca('');
+  inp.focus();
+}
+
+// Usa _pointElements e _detailsElements — sem querySelectorAll
+function executarBusca(q) {
+  let visivel = 0;
+
+  // 1. Mostrar/ocultar pontos
+  for (let i = 0; i < _pointElements.length; i++) {
+    const el    = _pointElements[i];
+    const match = !q || el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hidden', !match);
+    if (match) visivel++;
+  }
+
+  // 2. Auto-open folders com matches; fechar pastas sem matches
+  //    Usa _pointRefs armazenados no detNet (sem querySelectorAll)
+  if (q) {
+    for (let i = 0; i < _detailsElements.length; i++) {
+      const d = _detailsElements[i];
+      const refs = d._pointRefs;
+      if (refs && refs.length > 0) {
+        // Pasta secundária: abre se tem pelo menos um ponto visível
+        d.open = refs.some(el => !el.classList.contains('hidden'));
+      } else if (!refs) {
+        // Pasta primária: abre se qualquer detNet filho estiver aberto
+const children = d._childFolders;
+
+if (children) {
+  d.open = children.some(c => c.open);
+}
+      }
+    }
+  }
+
+  atualizarSearchInfo(q, visivel);
+}
+
+document.getElementById('search').addEventListener('input', function () {
+  const q = this.value.toLowerCase().trim();
+  clearTimeout(_searchDebounce);
+  _searchDebounce = setTimeout(() => executarBusca(q), 200);
+});
+
+// ---------------------------------------------------------------
+// SELEÇÃO INDIVIDUAL (comportamento original preservado)
+// ---------------------------------------------------------------
+function selecionarPonto(el, p) {
+  // Remove active usando cache — sem querySelectorAll
+  for (let i = 0; i < _pointElements.length; i++) {
+    if (_pointElements[i].classList.contains('active')) {
+      _pointElements[i].classList.remove('active');
+    }
+  }
+  el.classList.add('active');
+  pontoAtual = p;
+
+  const REGISTER_TYPE_MAP = {
+    null:'16 bit unsigned', 0: 'digital coil', 1:'16 bit unsigned',2:'16 bit signed',
+    3:'32 bit unsigned',4:'32 bit unsigned swapped',5:'32 bit signed',
+    6:'32 bit signed swapped',7:'32 bit real',8:'32 bit real swapped',
+    9:'64 bit real',10:'64 bit real swapped',11:'32 bit unsigned MOD10K',
+    12:'32 bit unsigned MOD10K swapped',13:'32 bit signed MOD10K',
+    14:'48 bit unsigned MOD10K',15:'48 bit unsigned MOD10K swapped',
+    16:'64 bit unsigned MOD10K',17:'64 bit unsigned MOD10K swapped',
+    18:'64 bit unigned',19:'64 bit unsigned swapped',
+    20:'64 bit signed',21:'64 bit signed swapped'
+  };
+
+  document.getElementById('lbl-nome').textContent     = p.name;
+  document.getElementById('lbl-device').textContent   = p.network || '';
+  document.getElementById('lbl-reg').textContent      = p.register || 'N/A';
+  document.getElementById('lbl-tipo').textContent     = REGISTER_TYPE_MAP[p.register_type] || '16 bit unsigned';
+  document.getElementById('lbl-bit').textContent      = p.bit != null ? 'bit ' + p.bit : '—';
+  document.getElementById('lbl-function').textContent = p.fc || '3';
+  document.getElementById('lbl-unit_id').textContent  = p.unit_id || 1;
+
+  const bin = ehBinario(p);//String(p.register_type || '').toLowerCase().includes('binaryinput');
+  document.getElementById('row-num').style.display     = bin ? 'none' : 'flex';
+  document.getElementById('row-bin').style.display     = bin ? 'flex'  : 'none';
+  document.getElementById('panel-point').style.display = 'block';
+  document.getElementById('placeholder').style.display = 'none';
+}
+
+// ---------------------------------------------------------------
+// ENVIO INDIVIDUAL (original preservado)
+// ---------------------------------------------------------------
+async function enviar(valor) {
+  if (!pontoAtual) { toast('nenhum ponto selecionado', 'err'); return; }
+  try {
+    const r = await fetch('/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        root: pontoAtual.root, net: pontoAtual.network,
+        ponto: pontoAtual.name, valor: String(valor),
+        unit_id: pontoAtual.unit_id
+      })
+    });
+    const d = await r.json();
+    toast(d.msg, d.ok ? 'ok' : 'err');
+  } catch (e) {
+    toast('erro de conexão: ' + e, 'err');
+  }
+}
+window.addEventListener('beforeunload', () => {
+  navigator.sendBeacon('/shutdown');
+});
+</script>
+ 
+</body>
+</html>
